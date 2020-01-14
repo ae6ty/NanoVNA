@@ -385,6 +385,7 @@ typedef struct properties {
   int8_t _active_marker;
   uint8_t _domain_mode; /* 0bxxxxxffm : where ff: TD_FUNC m: DOMAIN_MODE */
   uint8_t _marker_smith_format;
+  uint8_t _bandwidth;
   uint8_t _reserved[50];
   uint32_t checksum;
 } properties_t;
@@ -411,6 +412,7 @@ extern properties_t current_props;
 #define domain_mode current_props._domain_mode
 #define velocity_factor current_props._velocity_factor
 #define marker_smith_format current_props._marker_smith_format
+#define bandwidth current_props._bandwidth
 
 #define FREQ_IS_STARTSTOP() (frequency0 < frequency1)
 #define FREQ_IS_CENTERSPAN() (frequency0 > frequency1)
